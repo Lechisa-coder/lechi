@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+//import Header from "./component/Header";
+// import Footer from "./component/Footer";
+import Button from "./component/Button";
+import { useState } from "react";
+import FormInput from "./component/FormInput";
 function App() {
+  const [name, setName] = useState("");
+
+  console.log(name);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: "center", border: "2px", borderColor: "red" }}>
+      <form style={{ margin: "20px", padding: "5px" }}>
+        <div style={{ padding: "5px", margin: "3px" }}>
+          <FormInput placeholder="user name" setName={setName} />
+          <FormInput placeholder="email" />
+          <FormInput placeholder="department" />
+          <FormInput placeholder="address" />
+        </div>
+      </form>
+      {/* <Header title="hello" /> */}
+      {/* <Footer titles="Footers in React" />
+      <Button text="Add" color="green" /> */}
+      <Button />
     </div>
   );
 }
